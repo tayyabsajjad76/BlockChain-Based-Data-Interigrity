@@ -76,7 +76,11 @@ python -m http.server 8000
 
 # Usage
 Register as a student or faculty.
+
 Login to access the dashboard.
+
 Upload files to store their hash on the blockchain.
+
 Verify files anytime to ensure integrity.
+
 View blockchain records for all uploaded data.
