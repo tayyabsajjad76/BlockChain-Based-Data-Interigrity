@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Blockchain Records - Blockchain Integrity</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Header (same as other pages) */
+        header {
+            background-color: #161b22;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            height: 60px;
+            flex-wrap: nowrap;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #58a6ff;
+        }
+
+        .nav-items {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-items li a {
+            text-decoration: none;
+            color: #c9d1d9;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-items li a:hover {
+            color: #58a6ff;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .nav-right button {
+            padding: 6px 18px;
+            font-size: 14px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            background: #58a6ff;
+            color: #0d1117;
+            transition: 0.3s;
+        }
+
+        .nav-right button:hover {
+            background: #2ea043;
+            color: #fff;
+        }
+
+        /* Page Base */
+        body {
+            margin: 0;
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+            color: #c9d1d9;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        section {
+            padding: 60px 10%;
+        }
+
+        /* Intro Section */
+        .intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .intro h1 {
+            font-size: 40px;
+            color: #58a6ff;
+            margin-bottom: 20px;
+        }
+
+        .intro p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #c9d1d9;
+        }
+
+        /* Steps Section */
+        /* Steps Section - Single Row Layout */
+        .steps {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            flex-wrap: wrap;
+            /* allows wrapping on smaller screens */
+            gap: 40px;
+            /* space between boxes */
+            margin-top: 50px;
+            padding: 0 40px;
+            /* side spacing */
+        }
+
+
+
+
+        .step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px #58a6ff88;
+        }
+
+        .step {
+            background: #0d1117;
+            border: 1px solid #58a6ff;
+            border-radius: 12px;
+            padding: 50px 25px;
+            text-align: left;
+            /* text now starts from left */
+            box-shadow: 0 0 10px #58a6ff33;
+            transition: 0.3s ease;
+            flex: 1 1 250px;
+            max-width: 280px;
+            min-height: 230px;
+        }
+
+        .step h3 {
+            color: #58a6ff;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .step p {
+            color: #c9d1d9;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+
+
+
+        /* Blockchain Records Table */
+        .records {
+            margin-top: 80px;
+        }
+
+        .records h2 {
+            text-align: center;
+            color: #58a6ff;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #0d1117;
+            border: 1px solid #58a6ff;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid #30363d;
+        }
+
+        th {
+            background: #161b22;
+            color: #58a6ff;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background-color: #21262d;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #161b22;
+            color: #c9d1d9;
+            margin-top: 60px;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .step {
+                width: 90%;
+                margin: 0 auto;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">Blockchain Integrity</div>
+            <ul class="nav-items">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="upload.html">Uploads</a></li>
+                <li><a href="verify.html">Verify</a></li>
+                <li><a href="blockchain.html" style="color:#58a6ff;">Blockchain</a></li>
+            </ul>
+            <div class="nav-right">
+                <button onclick="window.location.href='login.html'">Login</button>
+                <button onclick="window.location.href='register.html'">Register</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Intro Section -->
+    <section class="intro">
+        <h1>Understanding the Blockchain</h1>
+        <p>
+            This page allows you to explore the blockchain ledger that secures every file uploaded through this system.
+            Each record is timestamped and cryptographically linked, guaranteeing that data remains untampered and
+            verifiable.
+        </p>
+    </section>
+
+    <!-- Steps Section -->
+    <section class="steps">
+        <div class="step">
+            <h3>1. File Upload</h3>
+            <p>When you upload a file, the system generates a unique cryptographic hash representing its contents.</p>
+        </div>
+        <div class="step">
+            <h3>2. Hash Creation</h3>
+            <p>The hash is then securely stored in the blockchain with metadata such as uploader and timestamp.</p>
+        </div>
+        <div class="step">
+            <h3>3. Block Linking</h3>
+            <p>Each new record is linked to the previous one, forming an immutable chain of verified data blocks.</p>
+        </div>
+        <div class="step">
+            <h3>4. Transparency</h3>
+            <p>All entries are publicly visible below, allowing any user to confirm authenticity and data integrity.</p>
+        </div>
+    </section>
+
+    <!-- Blockchain Records Table -->
+    <section class="records">
+        <h2>Blockchain Records</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>File Name</th>
+                    <th>Uploader</th>
+                    <th>Timestamp</th>
+                    <th>Hash</th>
+                </tr>
+            </thead>
+            <tbody id="blockTable"></tbody>
+        </table>
+    </section>
+
+    <footer>
+        &copy; 2025 Blockchain-Based Data Integrity System. All rights reserved.
+    </footer>
+
+    <script src="js/blockchain.js"></script>
+</body>
+
+</html>

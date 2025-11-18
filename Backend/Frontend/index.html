@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Blockchain-Based Data Integrity System</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+/* Header */
+header {
+    background-color: #161b22;
+    position: sticky;
+    top: 0; /* keeps header at top */
+    width: 100%;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    height: 60px;
+}
+
+/* Logo */
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #58a6ff;
+}
+
+/* Navigation items */
+.nav-items {
+    display: flex;
+    gap: 30px; 
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-items li a {
+    text-decoration: none;
+    color: #c9d1d9;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-items li a:hover {
+    color: #58a6ff;
+}
+
+/* Right section buttons */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px; 
+}
+
+.nav-right button {
+    padding: 6px 18px; 
+    font-size: 14px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background: #58a6ff;
+    color: #0d1117;
+    transition: 0.3s;
+}
+
+.nav-right button:hover {
+    background: #2ea043;
+    color: #fff;
+}
+
+/* Hero section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    text-align: center;
+    background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+    color: #fff;
+    padding: 0 20px;
+}
+
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #58a6ff;
+}
+
+.hero p {
+    font-size: 20px;
+    max-width: 700px;
+    margin-bottom: 40px;
+    color: #c9d1d9;
+}
+
+.hero button {
+    margin: 10px;
+    padding: 12px 28px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #0d1117;
+    background: #58a6ff;
+}
+
+.hero button:hover {
+    background: #2ea043;
+    color: #fff;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #161b22;
+    color: #c9d1d9;
+}
+
+/* Responsive */
+@media screen and (max-width: 900px) {
+.header-container {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 10px 20px;
+    }
+
+    .nav-items {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 8px;
+    }
+
+    .nav-right {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+    .hero h2 {
+        font-size: 32px;
+    }
+    .hero p {
+        font-size: 16px;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="logo">Blockchain Integrity</div>
+        <ul class="nav-items">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="upload.html">Uploads</a></li>
+            <li><a href="verify.html">Verify</a></li>
+            <li><a href="blockchain.html">Blockchain</a></li>
+        </ul>
+        <div class="nav-right">
+            <button onclick="window.location.href='login.html'">Login</button>
+            <button onclick="window.location.href='register.html'">Register</button>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <h2>Secure Your Data with Blockchain</h2>
+    <p>Our Blockchain-Based Data Integrity System ensures your files are tamper-proof and fully verifiable. Upload, verify, and track your data seamlessly.</p>
+    <div>
+        <button onclick="window.location.href='register.html'">Get Started</button>
+        <button onclick="window.location.href='verify.html'">Verify Files</button>
+    </div>
+</section>
+
+<footer>
+    &copy; 2025 Blockchain-Based Data Integrity System. All rights reserved.
+</footer>
+
+</body>
+</html>

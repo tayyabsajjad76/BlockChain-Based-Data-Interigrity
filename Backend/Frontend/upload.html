@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload File - Blockchain Integrity</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        /* Wrapper to keep footer at bottom */
+        .page-wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            background-color: #161b22;
+            width: 100%;
+            z-index: 100;
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            height: 60px;
+        }
+        .logo { font-size: 22px; font-weight: bold; color: #58a6ff; }
+        .nav-items {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-items li a {
+            text-decoration: none;
+            color: #c9d1d9;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        .nav-items li a:hover { color: #58a6ff; }
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .nav-right button {
+            padding: 6px 18px;
+            font-size: 14px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            background: #58a6ff;
+            color: #0d1117;
+            transition: 0.3s;
+        }
+        .nav-right button:hover { background: #2ea043; color: #fff; }
+
+        /* Page Flex Section */
+        main.page-info {
+            flex: 1;
+            background-color: #0d1117; /* Dark background above footer */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+        }
+
+        .page-flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            width: 100%;
+        }
+
+        .info-text { flex: 1; max-width: 50%; }
+        .info-text h2 { font-size: 36px; margin-bottom: 20px; color: #58a6ff; }
+        .info-text p { font-size: 18px; margin-bottom: 15px; color: #c9d1d9; }
+
+        /* Upload Form */
+        .upload-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            max-width: 400px;
+            padding: 25px;
+            border-radius: 12px;
+            background-color: #0d1117;
+            box-shadow: 0 0 10px #58a6ff, 0 0 20px #58a6ff, 0 0 30px #58a6ff, 0 0 40px #58a6ff;
+            animation: neonGlow 1.5s ease-in-out infinite alternate;
+        }
+        @keyframes neonGlow {
+            0% { box-shadow: 0 0 5px #58a6ff, 0 0 10px #58a6ff, 0 0 20px #58a6ff, 0 0 30px #58a6ff; }
+            100% { box-shadow: 0 0 10px #58a6ff, 0 0 20px #58a6ff, 0 0 30px #58a6ff, 0 0 40px #58a6ff; }
+        }
+        .upload-flex {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+        }
+        .upload-flex input[type="text"],
+        .upload-flex input[type="file"] {
+            padding: 10px 14px;
+            border-radius: 6px;
+            border: 1px solid #58a6ff;
+            width: 100%;
+            background-color: #161b22;
+            color: #c9d1d9;
+        }
+        .upload-flex button {
+            padding: 8px 16px;
+            font-size: 14px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            background: #58a6ff;
+            color: #0d1117;
+            transition: 0.3s;
+        }
+        .upload-flex button:hover { background: #2ea043; color: #fff; }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #161b22; /* slightly darker than main */
+            color: #c9d1d9;
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 900px) {
+            .page-flex { flex-direction: column; align-items: center; gap: 25px; padding: 40px 15px; }
+            .info-text, .upload-container { max-width: 100%; }
+            .info-text h2 { font-size: 28px; }
+            .info-text p { font-size: 16px; }
+            .upload-flex input[type="text"], .upload-flex input[type="file"] { width: 100%; }
+            .upload-flex button { width: 50%; align-self: center; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+    <header>
+        <div class="header-container">
+            <div class="logo">Blockchain Integrity</div>
+            <ul class="nav-items">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="upload.html" style="color:#58a6ff;">Uploads</a></li>
+                <li><a href="verify.html">Verify</a></li>
+                <li><a href="blockchain.html">Blockchain</a></li>
+            </ul>
+            <div class="nav-right">
+                <button onclick="window.location.href='login.html'">Login</button>
+                <button onclick="window.location.href='register.html'">Register</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-info">
+        <div class="page-flex">
+            <!-- Left: Info Text -->
+            <div class="info-text">
+                <h2>Upload Your Files</h2>
+                <p>Welcome! Here you can securely upload your files to the blockchain.</p>
+                <p>Each file is hashed and stored to ensure tamper-proof integrity.</p>
+                <p>After uploading, you can verify your files anytime to confirm authenticity.</p>
+            </div>
+
+            <!-- Right: Upload Form -->
+            <div class="upload-container">
+                <div class="upload-flex">
+                    <input type="text" id="uploader" placeholder="Your Name">
+                    <input type="file" id="fileInput">
+                    <button onclick="uploadFile()">Upload</button>
+                </div>
+                <p id="result"></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2025 Blockchain-Based Data Integrity System. All rights reserved.
+    </footer>
+</div>
+
+<script src="js/upload.js"></script>
+</body>
+</html>

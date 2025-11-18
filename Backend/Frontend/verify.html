@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Verify File - Blockchain Integrity</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header - KEEP AS IS */
+        header {
+            background-color: #161b22;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    height: 60px;
+    flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #58a6ff;
+        }
+        .nav-items {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        .nav-items li a {
+            text-decoration: none;
+            color: #c9d1d9;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        .nav-items li a:hover {
+            color: #58a6ff;
+        }
+
+        .nav-right {
+    display: flex;          /* ensure horizontal layout */
+    align-items: center;    /* vertically center */
+    gap: 12px;              /* space between buttons */
+    flex-shrink: 0;         /* prevent shrinking */
+}
+        .nav-right button {
+            padding: 6px 18px;
+            font-size: 14px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            background: #58a6ff;
+            color: #0d1117;
+            transition: 0.3s;
+            margin-left: 10px;
+        }
+        .nav-right button:hover {
+            background: #2ea043;
+            color: #fff;
+        }
+
+        /* Hero / Info Section */
+        .hero-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #111622 0%, #161b22 100%);
+        }
+        .hero-section h2 {
+            font-size: 42px;
+            color: #58a6ff;
+            margin-bottom: 20px;
+        }
+        .hero-section p {
+            font-size: 20px;
+            max-width: 700px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: #c9d1d9;
+        }
+
+        /* How It Works Section */
+        .how-section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 60px 20px;
+            background-color: #0d1117;
+        }
+        .step {
+            flex: 1 1 250px;
+            background-color: #161b22;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            border-left: 4px solid #58a6ff;
+            transition: transform 0.3s;
+            min-height: 220px; /* increased vertical height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* vertically center content */
+        }
+        .step:hover {
+            transform: translateY(-5px);
+        }
+        .step h3 {
+            color: #58a6ff;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        .step p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #c9d1d9;
+        }
+
+        /* Verify Form Section */
+        .verify-form-section {
+            display: flex;
+            justify-content: center;
+            padding: 60px 20px;
+            background-color: #111622;
+        }
+        .verify-container {
+            max-width: 450px;
+            width: 100%;
+            background-color: #161b22;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(88, 166, 255, 0.5);
+            text-align: center;
+        }
+        .verify-container input[type="file"] {
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #58a6ff;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            margin-bottom: 15px;
+        }
+        .verify-container button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            background-color: #58a6ff;
+            color: #0d1117;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .verify-container button:hover {
+            background-color: #2ea043;
+            color: #fff;
+        }
+        #verifyResult {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #161b22;
+            color: #c9d1d9;
+            margin-top: auto;
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 900px) {
+            .how-section {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="logo">Blockchain Integrity</div>
+        <ul class="nav-items">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="upload.html">Uploads</a></li>
+            <li><a href="verify.html" style="color:#58a6ff;">Verify</a></li>
+            <li><a href="blockchain.html">Blockchain</a></li>
+        </ul>
+        <div class="nav-right">
+            <button onclick="window.location.href='login.html'">Login</button>
+            <button onclick="window.location.href='register.html'">Register</button>
+        </div>
+    </div>
+</header>
+
+<!-- Hero / Info Section -->
+<section class="hero-section">
+    <h2>Verify File Integrity</h2>
+    <p>Ensure your files are tamper-proof and authentic. This page allows you to verify any file previously uploaded to the blockchain.</p>
+    <p>Simply upload your file below and get instant verification results.</p>
+</section>
+
+<!-- How It Works Section -->
+<section class="how-section">
+    <div class="step">
+        <h3>Step 1: Upload File</h3>
+        <p>Select the file you want to verify. Make sure it was uploaded previously to the blockchain system.</p>
+    </div>
+    <div class="step">
+        <h3>Step 2: Verification Process</h3>
+        <p>The system will hash your file and compare it with the stored blockchain hash to check for integrity.</p>
+    </div>
+    <div class="step">
+        <h3>Step 3: Get Results</h3>
+        <p>Immediately see if your file is authentic or has been tampered with. Reliable and secure verification in seconds.</p>
+    </div>
+</section>
+
+<!-- Verify Form Section -->
+<section class="verify-form-section">
+    <div class="verify-container">
+        <input type="file" id="fileInput">
+        <button onclick="verifyFile()">Verify</button>
+        <p id="verifyResult"></p>
+    </div>
+</section>
+
+<footer>
+    &copy; 2025 Blockchain-Based Data Integrity System. All rights reserved.
+</footer>
+
+<script src="js/verify.js"></script>
+</body>
+</html>
